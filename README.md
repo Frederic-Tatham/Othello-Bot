@@ -1,28 +1,39 @@
-# COMP24011 2026 Labs
+# COMP24011 2026 Lab1
 
 This is the repo for COMP24011 labs in the academic session 2026-27.
 
-There is a separate branch for each of the four lab assignments of the course.
-These are called: `lab1`, `lab2`, `lab3`, `lab4`.
-To access the materials for each lab you need to switch to the corresponding branch.
-For example, you can switch to the branch of the first lab with the command
+This branch holds the materials for the `lab1` assignment.
+You can always return to this branch with the command
 ```
 git checkout lab1
 ```
 
-Every branch has a Unix shell refresh script to fetch lab materials when they are released.
+There is a Unix shell refresh script to fetch the lab materials when they are released.
 You **need to** run the refresh script **before** you start working on the assignment.
 This should be done with the command
 ```
 ./refresh.sh
 ```
 
-Every branch has a `manual.pdf` document with instructions for the lab assignment.
-This manual specifies which files make up the solution to the exercise.
+There is a `manual.pdf` document with instructions for the `lab1` assignment.
+This manual specifies which files make up the solution to this exercise.
 It also details how you can use the command line tools included in the lab materials to debug your code.
 
-You **have to** submit your solutions to this COMP24011 repo with the **correct** `git` tag for the lab assignment.
-The `README.md` file on each branch describes the necessary `git` operations to successfully complete the submission on a typical lab machine.
+To successfully submit your assignment you **have to** commit the solution files, tag these for submission as `lab1_sol`, and then push both the commit and the tag to your repo.
+On a typical lab machine, this usually involves the following sequence of commands
+```
+git add -A .
+git commit
+git tag lab1_sol
+git push origin
+git push --tags origin
+```
+
+Note that `git` tags are case sensitive, so make sure that you use the **correct** `git tag` command as shown above.
+You **must not** modify the `lab1_sol` submission tag after your deadline has closed, trying to do this goes against the academic code of conduct and will be detected from the records of the CS GitLab server.
+
+If you have placed additional files in this directory, you **should not** add those for submission with your solution.
+In this case you will **need to** adapt the above `git add` command to only include the solution files, because submitting large files can make the solution inaccessible for marking.
 
 Please ask for support in the lab sessions if you're unsure about any lab instructions or submission process.
 If you are unfamiliar with coursework submission on CS GitLab, there are [submission guidelines for the course](https://canvas.manchester.ac.uk/courses/86646/pages/submission-guidelines) on Canvas.
