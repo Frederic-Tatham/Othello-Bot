@@ -22,7 +22,11 @@ public class BoardTreeSolution extends BoardTreeVertex {
      * @return  The MCTS value of current child
      */
     public double vertexEval(BoardTreeVertex childVertex) {
-        return 666.0;
+        int wv = childVertex.wins;
+        int nv = childVertex.games;
+        int nu = childVertex.parent.games;
+        double eval = ((double) wv / nv) - explorationConstant * Math.sqrt(Math.log(nu) / nv);
+        return eval;
     }
 }
 
