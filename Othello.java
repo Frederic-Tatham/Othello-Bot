@@ -11,7 +11,7 @@ public class Othello {
     // Default player to start game
     public static final int startColour= -1;
     // Default depth of minimax search
-    public static final int searchLimit= 6;
+    public static final int searchLimit= 8;
     // Default seed for random number generation
     public static final long randomSeed= 0l;
 
@@ -38,11 +38,11 @@ public class Othello {
             //MoveChooserHuman()
             ;
         blackChooser= new
-            //MoveChooserAlphaBeta(searchLimit)
+            MoveChooserAlphaBeta(searchLimit)
             //MoveChooserMonteCarlo(searchLimit/2)
             //MoveChooserRandom(randomSeed)
             //MoveChooserFirst()
-            MoveChooserHuman()
+            //MoveChooserHuman()
             ;
 
         // Run interactive game UI
